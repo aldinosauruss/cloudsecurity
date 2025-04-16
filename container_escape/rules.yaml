@@ -1,0 +1,8 @@
+- rule: Detect Nsenter in Container
+  desc: Detect when nsenter is used inside a container (possible escape attempt)
+  condition: >
+    container.id != host and
+    proc.name = "nsenter"
+  output: "Container Escape Attempt: %proc.name executed in container"
+  priority: CRITICAL
+  tags: [container, escape]

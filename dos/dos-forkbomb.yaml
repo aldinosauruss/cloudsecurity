@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: dos-forkbomb
+spec:
+  containers:
+  - name: dos-container
+    image: ubuntu
+    command: ["/bin/sh"]
+    stdin: true
+    tty: true
